@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{43D0E319-62CE-4625-830C-B92CDEB28EEB}</ProjectGuid>
+    <RootNamespace>NEPES</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_x64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../Common;../Common/MMTimer;../Prebuilt/lp;../Prebuilt/tinyxml2;../Prebuilt/NAVILibrary/include;../Prebuilt/opencv300/include;../Prebuilt/navi_ai_sdk/V1150/include;../Prebuilt/CrtDbgLeakCheck/include;../Prebuilt/SafeNet/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lib/opencv_world300d.lib;lib/CrtDbgLeakCheckd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\;../Prebuilt/lp/x86;../Prebuilt/tinyxml2/x86;../Prebuilt/NAVILibrary;../Prebuilt/opencv300;../Prebuilt/CrtDbgLeakCheck;../Prebuilt/SafeNet/Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\Prebuilt\NAVILibrary\dll\Applicationd.dll" "$(OutDir)Applicationd.dll"
+copy /Y "$(SolutionDir)\Prebuilt\opencv300\bin\opencv_world300d.dll" "$(OutDir)opencv_world300d.dll"
+copy /Y "$(SolutionDir)\Prebuilt\CrtDbgLeakCheck\dll\CrtDbgLeakCheckd.dll" "$(OutDir)CrtDbgLeakCheckd.dll"</Command>
+    </PostBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);../Common;../Common/MMTimer;../Common/PLCMxComponent;../Prebuilt/lp;../Prebuilt/tinyxml2;../Prebuilt/NAVILibrary/include;../Prebuilt/opencv300/include;../Prebuilt/navi_ai_sdk/v1150/include;../Prebuilt/CrtDbgLeakCheck/include;../Prebuilt/SafeNet/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lib/opencv_world300d.lib;NAVIAIMars.lib;lib/CrtDbgLeakCheckd_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\;../Prebuilt/lp/x64;../Prebuilt/tinyxml2/x64;../Prebuilt/NAVILibrary/x64;../Prebuilt/opencv300/x64;../Prebuilt/navi_ai_sdk/V1150/lib;../Prebuilt/CrtDbgLeakCheck;../Prebuilt/SafeNet/Lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\Prebuilt\NAVILibrary\x64\dll\Applicationd.dll" "$(OutDir)Applicationd.dll"
+copy /Y "$(SolutionDir)\Prebuilt\SafeNet\dll\x64\hasp_windows_x64_98043.dll" "$(OutDir)hasp_windows_x64_98043.dll"
+copy /Y "$(SolutionDir)\Prebuilt\opencv300\x64\bin\opencv_world300d.dll" "$(OutDir)opencv_world300d.dll"
+copy /Y "$(SolutionDir)\Prebuilt\CrtDbgLeakCheck\dll\CrtDbgLeakCheckd_x64.dll" "$(OutDir)CrtDbgLeakCheckd_x64.dll"</Command>
+    </PostBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../Common;../Common/MMTimer;../Prebuilt/lp;../Prebuilt/tinyxml2;../Prebuilt/NAVILibrary/include;../Prebuilt/opencv300/include;../Prebuilt/navi_ai_sdk/V1150/include;../Prebuilt/CrtDbgLeakCheck/include;../Prebuilt/SafeNet/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>lib/opencv_world300.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\;../Prebuilt/lp/x86;../Prebuilt/tinyxml2/x86;../Prebuilt/NAVILibrary;../Prebuilt/opencv300;../Prebuilt/CrtDbgLeakCheck;../Prebuilt/SafeNet/Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\Prebuilt\NAVILibrary\dll\Application.dll" "$(OutDir)Application.dll"
+copy /Y "$(SolutionDir)\Prebuilt\opencv300\bin\opencv_world300.dll" "$(OutDir)opencv_world300.dll"</Command>
+    </PostBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);../Common;../Common/MMTimer;../Prebuilt/lp;../Prebuilt/tinyxml2;../Prebuilt/NAVILibrary/include;../Prebuilt/opencv300/include;../Prebuilt/navi_ai_sdk/V1150/include;../Prebuilt/CrtDbgLeakCheck/include;../Prebuilt/SafeNet/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>lib/opencv_world300.lib;NAVIAIMars.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Build\$(PlatformName)\$(Configuration)\;../Prebuilt/lp/x64;../Prebuilt/tinyxml2/x64;../Prebuilt/NAVILibrary/x64;../Prebuilt/opencv300/x64;../Prebuilt/navi_ai_sdk/V1150/lib;../Prebuilt/CrtDbgLeakCheck;../Prebuilt/SafeNet/Lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\Prebuilt\NAVILibrary\x64\dll\Application.dll" "$(OutDir)Application.dll"
+copy /Y "$(SolutionDir)\Prebuilt\SafeNet\dll\x64\hasp_windows_x64_98043.dll" "$(OutDir)hasp_windows_x64_98043.dll"
+copy /Y "$(SolutionDir)\Prebuilt\opencv300\x64\bin\opencv_world300.dll" "$(OutDir)opencv_world300.dll"</Command>
+    </PostBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\Camera\CameraDev.h" />
+    <ClInclude Include="..\Common\Camera\CameraDevice.h" />
+    <ClInclude Include="..\Common\Camera\CameraInterface.h" />
+    <ClInclude Include="..\Common\Camera\CameraInterfaceDef.h" />
+    <ClInclude Include="..\Common\CaptureManager.h" />
+    <ClInclude Include="..\Common\Common.h" />
+    <ClInclude Include="..\Common\CommonCapture.h" />
+    <ClInclude Include="..\Common\Ethernet\Ethernet.h" />
+    <ClInclude Include="..\Common\Ethernet\EthernetClient.h" />
+    <ClInclude Include="..\Common\Ethernet\EthernetDef.h" />
+    <ClInclude Include="..\Common\Ethernet\EthernetServer.h" />
+    <ClInclude Include="..\Common\Inspection\Inspection.h" />
+    <ClInclude Include="..\Common\Inspection\InspectionCamera.h" />
+    <ClInclude Include="..\Common\Inspection\NAVIAIMarsTester.h" />
+    <ClInclude Include="..\Common\Inspection\Sample.h" />
+    <ClInclude Include="..\Common\Inspection\SampleSide.h" />
+    <ClInclude Include="..\Common\Inspection\Step.h" />
+    <ClInclude Include="..\Common\Inspection\StepBubble.h" />
+    <ClInclude Include="..\Common\Inspection\StepDiffer.h" />
+    <ClInclude Include="..\Common\Inspection\StepScratch.h" />
+    <ClInclude Include="..\Common\Inspection\StepSize.h" />
+    <ClInclude Include="..\Common\Inspection\StepSizeCalculation.h" />
+    <ClInclude Include="..\Common\Inspection\StepSizeSecond.h" />
+    <ClInclude Include="..\Common\Inspection\StepStain.h" />
+    <ClInclude Include="..\Common\Inspection\StepStamp.h" />
+    <ClInclude Include="..\Common\Inspection\until_func.h" />
+    <ClInclude Include="..\Common\Inspection\util_functions.h" />
+    <ClInclude Include="..\Common\Log\Log.h" />
+    <ClInclude Include="..\Common\Log\LogFile.h" />
+    <ClInclude Include="..\Common\Log\LogFileHeater.h" />
+    <ClInclude Include="..\Common\Log\LogHeater.h" />
+    <ClInclude Include="..\Common\MMTimer\MMTimer.h" />
+    <ClInclude Include="..\Common\Proc\ProcBuffer.h" />
+    <ClInclude Include="..\Common\Proc\ProcCaptureCamera.h" />
+    <ClInclude Include="..\Common\Proc\ProcessDef.h" />
+    <ClInclude Include="..\Common\Serial\Serial.h" />
+    <ClInclude Include="..\Common\Serial\SerialCtrl.h" />
+    <ClInclude Include="..\Common\Serial\SerialDef.h" />
+    <ClInclude Include="..\Common\Serial\SerialListener.h" />
+    <ClInclude Include="..\Common\Tracker\LPTracker.h" />
+    <ClInclude Include="..\Common\Tracker\TrackerLibrary.h" />
+    <ClInclude Include="..\Common\Tracker\VideoOutArrow.h" />
+    <ClInclude Include="..\Common\UserInterfaceDef.h" />
+    <ClInclude Include="..\Common\Util\Util.h" />
+    <ClInclude Include="..\Common\Video\ConvertColor.h" />
+    <ClInclude Include="..\Common\Video\VideoCaptureCallback.h" />
+    <ClInclude Include="..\Common\Video\VideoDef.h" />
+    <ClInclude Include="..\Common\Xml\Xml.h" />
+    <ClInclude Include="..\Common\Xml\XmlAttribute.h" />
+    <ClInclude Include="..\Common\Xml\XmlDef.h" />
+    <ClInclude Include="..\Common\Xml\XmlFile.h" />
+    <ClInclude Include="..\Common\Xml\XmlNode.h" />
+    <ClInclude Include="..\Common\Xml\XmlValue.h" />
+    <ClInclude Include="CustomCapture.h" />
+    <ClInclude Include="CustomCaptureDisplay.h" />
+    <ClInclude Include="CustomMessage.h" />
+    <ClInclude Include="CustomScrollView.h" />
+    <ClInclude Include="CustomScrollViewEdit.h" />
+    <ClInclude Include="CustomScrollViewSize.h" />
+    <ClInclude Include="CustomStep.h" />
+    <ClInclude Include="DlgCalibrate.h" />
+    <ClInclude Include="DlgCameraControl.h" />
+    <ClInclude Include="DlgCamRoi.h" />
+    <ClInclude Include="DlgConfig.h" />
+    <ClInclude Include="DlgExtractSample.h" />
+    <ClInclude Include="DlgInspection.h" />
+    <ClInclude Include="DlgLotID.h" />
+    <ClInclude Include="DlgLotIDOnce.h" />
+    <ClInclude Include="DlgMessage.h" />
+    <ClInclude Include="DlgOption.h" />
+    <ClInclude Include="DlgOptionEtc.h" />
+    <ClInclude Include="DlgPasswd.h" />
+    <ClInclude Include="DlgSequence.h" />
+    <ClInclude Include="DlgSizeGain.h" />
+    <ClInclude Include="DlgSizeName.h" />
+    <ClInclude Include="DlgStepDiffer.h" />
+    <ClInclude Include="DlgStepName.h" />
+    <ClInclude Include="DlgStepSize.h" />
+    <ClInclude Include="DlgStepStain.h" />
+    <ClInclude Include="DlgStepBubble.h" />
+    <ClInclude Include="DlgStepScratch.h" />
+    <ClInclude Include="DlgStepStamp.h" />
+    <ClInclude Include="DlgStrobe.h" />
+    <ClInclude Include="DlgStrobeBrightness.h" />
+    <ClInclude Include="MemLeakDetect.h" />
+    <ClInclude Include="NEPES.h" />
+    <ClInclude Include="NEPESDlg.h" />
+    <ClInclude Include="NumberEdit.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RoiRectTracker.h" />
+    <ClInclude Include="StaticDisplay.h" />
+    <ClInclude Include="StaticText.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stringres.h" />
+    <ClInclude Include="TapMainCount.h" />
+    <ClInclude Include="TapCameraCtrl.h" />
+    <ClInclude Include="TapMainScenario.h" />
+    <ClInclude Include="TapMainSize.h" />
+    <ClInclude Include="TapMainSummary.h" />
+    <ClInclude Include="TapSizeList.h" />
+    <ClInclude Include="TapView.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ViewRoi.h" />
+    <ClInclude Include="ViewTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Camera\CameraDevice.cpp" />
+    <ClCompile Include="..\Common\CaptureManager.cpp" />
+    <ClCompile Include="..\Common\Ethernet\Ethernet.cpp" />
+    <ClCompile Include="..\Common\Ethernet\EthernetClient.cpp" />
+    <ClCompile Include="..\Common\Ethernet\EthernetServer.cpp" />
+    <ClCompile Include="..\Common\Inspection\Inspection.cpp" />
+    <ClCompile Include="..\Common\Inspection\InspectionCamera.cpp" />
+    <ClCompile Include="..\Common\Inspection\NAVIAIMarsTester.cpp" />
+    <ClCompile Include="..\Common\Inspection\Sample.cpp" />
+    <ClCompile Include="..\Common\Inspection\SampleSide.cpp" />
+    <ClCompile Include="..\Common\Inspection\Step.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepBubble.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepDiffer.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepScratch.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepSize.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepSizeCalculation.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepSizeSecond.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepStain.cpp" />
+    <ClCompile Include="..\Common\Inspection\StepStamp.cpp" />
+    <ClCompile Include="..\Common\Inspection\until_func.cpp" />
+    <ClCompile Include="..\Common\Inspection\util_functions.cpp" />
+    <ClCompile Include="..\Common\Log\Log.cpp" />
+    <ClCompile Include="..\Common\Log\LogFile.cpp" />
+    <ClCompile Include="..\Common\Log\LogFileHeater.cpp" />
+    <ClCompile Include="..\Common\Log\LogHeater.cpp" />
+    <ClCompile Include="..\Common\MMTimer\MMTimer.cpp" />
+    <ClCompile Include="..\Common\Proc\ProcBuffer.cpp" />
+    <ClCompile Include="..\Common\Proc\ProcCaptureCamera.cpp" />
+    <ClCompile Include="..\Common\Serial\Serial.cpp" />
+    <ClCompile Include="..\Common\Serial\SerialCtrl.cpp" />
+    <ClCompile Include="..\Common\Serial\SerialListener.cpp" />
+    <ClCompile Include="..\Common\Tracker\LPTracker.cpp" />
+    <ClCompile Include="..\Common\Tracker\VideoOutArrow.cpp" />
+    <ClCompile Include="..\Common\Util\Util.cpp" />
+    <ClCompile Include="..\Common\Video\ConvertColor.cpp" />
+    <ClCompile Include="..\Common\Video\VideoCaptureCallback.cpp" />
+    <ClCompile Include="..\Common\Xml\Xml.cpp" />
+    <ClCompile Include="..\Common\Xml\XmlAttribute.cpp" />
+    <ClCompile Include="..\Common\Xml\XmlFile.cpp" />
+    <ClCompile Include="..\Common\Xml\XmlNode.cpp" />
+    <ClCompile Include="..\Common\Xml\XmlValue.cpp" />
+    <ClCompile Include="CustomCapture.cpp" />
+    <ClCompile Include="CustomCaptureDisplay.cpp" />
+    <ClCompile Include="CustomMessage.cpp" />
+    <ClCompile Include="CustomScrollView.cpp" />
+    <ClCompile Include="CustomScrollViewEdit.cpp" />
+    <ClCompile Include="CustomScrollViewSize.cpp" />
+    <ClCompile Include="CustomStep.cpp" />
+    <ClCompile Include="DlgCalibrate.cpp" />
+    <ClCompile Include="DlgCameraControl.cpp" />
+    <ClCompile Include="DlgCamRoi.cpp" />
+    <ClCompile Include="DlgConfig.cpp" />
+    <ClCompile Include="DlgExtractSample.cpp" />
+    <ClCompile Include="DlgInspection.cpp" />
+    <ClCompile Include="DlgLotID.cpp" />
+    <ClCompile Include="DlgLotIDOnce.cpp" />
+    <ClCompile Include="DlgMessage.cpp" />
+    <ClCompile Include="DlgOption.cpp" />
+    <ClCompile Include="DlgOptionEtc.cpp" />
+    <ClCompile Include="DlgPasswd.cpp" />
+    <ClCompile Include="DlgSequence.cpp" />
+    <ClCompile Include="DlgSizeGain.cpp" />
+    <ClCompile Include="DlgSizeName.cpp" />
+    <ClCompile Include="DlgStepDiffer.cpp" />
+    <ClCompile Include="DlgStepName.cpp" />
+    <ClCompile Include="DlgStepSize.cpp" />
+    <ClCompile Include="DlgStepStain.cpp" />
+    <ClCompile Include="DlgStepBubble.cpp" />
+    <ClCompile Include="DlgStepScratch.cpp" />
+    <ClCompile Include="DlgStepStamp.cpp" />
+    <ClCompile Include="DlgStrobe.cpp" />
+    <ClCompile Include="DlgStrobeBrightness.cpp" />
+    <ClCompile Include="MemLeakDetect.cpp" />
+    <ClCompile Include="NEPES.cpp" />
+    <ClCompile Include="NEPESDlg.cpp" />
+    <ClCompile Include="NumberEdit.cpp" />
+    <ClCompile Include="RoiRectTracker.cpp" />
+    <ClCompile Include="StaticDisplay.cpp" />
+    <ClCompile Include="StaticText.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TapMainCount.cpp" />
+    <ClCompile Include="TapCameraCtrl.cpp" />
+    <ClCompile Include="TapMainScenario.cpp" />
+    <ClCompile Include="TapMainSize.cpp" />
+    <ClCompile Include="TapMainSummary.cpp" />
+    <ClCompile Include="TapSizeList.cpp" />
+    <ClCompile Include="TapView.cpp" />
+    <ClCompile Include="ViewRoi.cpp" />
+    <ClCompile Include="ViewTree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NEPES.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NEPES.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\camera_first.bmp" />
+    <Image Include="res\camera_second.bmp" />
+    <Image Include="res\display_static_LeftBottom.bmp" />
+    <Image Include="res\display_static_LeftTop.bmp" />
+    <Image Include="res\display_static_RightBottom.bmp" />
+    <Image Include="res\display_static_RightTop.bmp" />
+    <Image Include="res\LaonPeople.bmp" />
+    <Image Include="res\LaonPeople.ico" />
+    <Image Include="res\NEPES.ico" />
+    <Image Include="res\replay.bmp" />
+    <Image Include="res\staticstep_LeftBottom.bmp" />
+    <Image Include="res\staticstep_LeftTop.bmp" />
+    <Image Include="res\staticstep_RightBottom.bmp" />
+    <Image Include="res\staticstep_RightTop.bmp" />
+    <Image Include="res\static_bottom.bmp" />
+    <Image Include="res\static_Left.bmp" />
+    <Image Include="res\static_LeftBottom.bmp" />
+    <Image Include="res\static_LeftTop.bmp" />
+    <Image Include="res\static_Right.bmp" />
+    <Image Include="res\static_RightBottom.bmp" />
+    <Image Include="res\static_RightTop.bmp" />
+    <Image Include="res\static_top.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="NEPES.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

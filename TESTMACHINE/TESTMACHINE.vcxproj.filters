@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UserInterface">
+      <UniqueIdentifier>{ea0c178f-3e57-4e34-bb0b-c33e75e6ded1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{c78f6edf-581f-47fc-af01-bf7ce305e7ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Ethernet">
+      <UniqueIdentifier>{48210f1d-7013-4680-8983-ca7aa002252b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Util">
+      <UniqueIdentifier>{79e8e72d-b277-450f-a5a2-c7ae07cd48b6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TESTMACHINE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TESTMACHINEDlg.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetServer.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\Ethernet.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetClient.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetDef.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Util\Util.h">
+      <Filter>Common\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TESTMACHINE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TESTMACHINEDlg.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\Ethernet.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\EthernetClient.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\EthernetServer.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Util\Util.cpp">
+      <Filter>Common\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TESTMACHINE.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TESTMACHINE.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\TESTMACHINE.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

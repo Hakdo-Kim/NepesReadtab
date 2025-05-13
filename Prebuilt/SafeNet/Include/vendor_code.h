@@ -1,0 +1,17 @@
+/* HASP vendor code for demo keys 
+ * Copyright (C) 2014, SafeNet, Inc. All rights reserved.*/
+
+unsigned char vendorCode[] =
+"fKi/xcLyHYjtlqV9dWNbCnCsEz1jwOxg7rL3Jkx7DUG7EwW3/JSsDmJH0DWEEf+QWu1nCuz4weqJgVkl"
+"LlemnU/w9yg0LEq0rtFyAnXuGwYb7bYv0NBcHq3PaTUIGgrBDFACMOzMm9AcNwlTMGSCVc+P3lNVL39T"
+"T8FcavbHy05+2PMgUnVmKdFvgOjN3Mlqyw58oWXqTDcsUKWvTpn1T6kG5/IIoVGdW923vNNWbsI6IrIy"
+"Rk46SMCuUMTBn0UZw3eas18w+rRmq9GARNwNn+q+9Va6aZ62+TnOg8oZ/Yzh9fLIFED1tM4WgBoBUafK"
+"1ucwn3Dr08j8jwZTySXs/8k6WEzDvGWxZfsre7IgNiEThG0rw8ju+hUC4sQGSBHTB0XpJ/2MKIxTRpMi"
+"6qd5IiMVnZL5en1DLjBXTS5CAuNpeXgYqKD3NKIM8GQ7xivDfFoMs6bSiJJtelR3fp1ZQe2iuD3PIZ5I"
+"uEOqjkXxRfCeKIOj8xcocO+5Y8oRofG3hEfyEgx3tE6d2aZg2siKDJzesRxKhdwebHuIurG7rAItSBzC"
+"RsJwjN5/KzqVNFZhkOgpt8ikwl2kIaiTEUXiKRQR880ds/a70DvFi7+v051KrRrChUnN1RPrAFFccabF"
+"DBy1SBI30BtVNNlUBa+ajxOsLEq6fwkcXJuruOAGJIj7JFTwR0PJ6v8sW0u1y8czb7bUbLIz7fIrwCNp"
+"dqZQxN+dw0eenraEuhlo9zcR7pu5VVHihuXw7h5iDB1YicZsZeCjGqcgQ83zzfpKsVwt/tCAI9CFpSjl"
+"EnFhsjsXgwQBQRzpXTyzE3akN5mBU8I/SVBLZUcXXTzUCqzd3sb5cZVFxv3HApyZy0Gi7QzwIzXY5Evx"
+"LGpP9O+6M5ejS4LkjjK7qnyelaPLNio99kpkezywxO91eBnZUROs+NRsmdlK7eJ5d4MDrFbuqmZAx2iv"
+"2nFecyPx5mDKUIiSxCtL9g==";

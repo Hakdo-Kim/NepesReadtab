@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UserInterface">
+      <UniqueIdentifier>{d00b8814-faf5-47ec-8bd1-5df665a65036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{ebf724e7-99fd-4e8b-a850-d1ad927ee21f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Camera">
+      <UniqueIdentifier>{98a10fac-0a2e-4119-be05-d13e323eccf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Util">
+      <UniqueIdentifier>{d9b1ac1d-26de-4c69-94b7-47378633b07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Proc">
+      <UniqueIdentifier>{ae3360f0-2104-4a3e-946d-9ea28afeeaba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Video">
+      <UniqueIdentifier>{d56aea6c-4153-43b8-b4d9-8c4fd62f7fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Xml">
+      <UniqueIdentifier>{49117928-fd19-4829-8ffa-c645e687ecba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Log">
+      <UniqueIdentifier>{3bbe22a5-8afe-4373-aabb-38a7ed9d57d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Inspection">
+      <UniqueIdentifier>{ac55ee75-15b9-4460-84b2-a2252e477365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Tracker">
+      <UniqueIdentifier>{bc8d44d2-9347-4876-b59e-a0bc772f5d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Serial">
+      <UniqueIdentifier>{4c8b5b6f-3d37-40d9-8ad4-227487a71506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Ethernet">
+      <UniqueIdentifier>{ae67a8b4-9ce2-4298-b270-7946247c000e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\MMTimer">
+      <UniqueIdentifier>{3e89aebf-c3d7-4383-ba79-d115d3816f3a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NEPES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NEPESDlg.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMessage.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="TapCameraCtrl.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCameraControl.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgConfig.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="stringres.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="RoiRectTracker.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticDisplay.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticText.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewRoi.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTree.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraDev.h">
+      <Filter>Common\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraDevice.h">
+      <Filter>Common\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraInterface.h">
+      <Filter>Common\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraInterfaceDef.h">
+      <Filter>Common\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Proc\ProcBuffer.h">
+      <Filter>Common\Proc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Proc\ProcCaptureCamera.h">
+      <Filter>Common\Proc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Proc\ProcessDef.h">
+      <Filter>Common\Proc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\VideoDef.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\VideoCaptureCallback.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Util\Util.h">
+      <Filter>Common\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CommonCapture.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UserInterfaceDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomCapture.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomCaptureDisplay.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomMessage.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCamRoi.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CaptureManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\Xml.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\XmlAttribute.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\XmlDef.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\XmlFile.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\XmlNode.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml\XmlValue.h">
+      <Filter>Common\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="TapView.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomScrollView.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomStep.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSequence.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomScrollViewEdit.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Serial\Serial.h">
+      <Filter>Common\Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Serial\SerialCtrl.h">
+      <Filter>Common\Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Serial\SerialDef.h">
+      <Filter>Common\Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Serial\SerialListener.h">
+      <Filter>Common\Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log\LogFile.h">
+      <Filter>Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\Step.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepBubble.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepSize.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepStain.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepStamp.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\Inspection.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\SampleSide.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\Sample.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\InspectionCamera.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tracker\LPTracker.h">
+      <Filter>Common\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tracker\TrackerLibrary.h">
+      <Filter>Common\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tracker\VideoOutArrow.h">
+      <Filter>Common\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepSize.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepStain.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepBubble.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepScratch.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepStamp.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCalibrate.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\until_func.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\Ethernet.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetClient.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetServer.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Ethernet\EthernetDef.h">
+      <Filter>Common\Ethernet</Filter>
+    </ClInclude>
+    <ClInclude Include="TapMainScenario.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="TapMainSize.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="TapMainSummary.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLotID.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOption.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepScratch.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepDiffer.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepDiffer.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomScrollViewSize.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptionEtc.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log\Log.h">
+      <Filter>Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStrobeBrightness.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberEdit.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPasswd.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\util_functions.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\NAVIAIMarsTester.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStepName.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgInspection.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStrobe.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSizeGain.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLotIDOnce.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="TapMainCount.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MMTimer\MMTimer.h">
+      <Filter>Common\MMTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Video\ConvertColor.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLeakDetect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSizeName.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepSizeSecond.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="TapSizeList.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Inspection\StepSizeCalculation.h">
+      <Filter>Common\Inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log\LogHeater.h">
+      <Filter>Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log\LogFileHeater.h">
+      <Filter>Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgExtractSample.h">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NEPES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NEPESDlg.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMessage.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TapCameraCtrl.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCameraControl.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgConfig.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="RoiRectTracker.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticDisplay.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticText.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewRoi.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTree.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Camera\CameraDevice.cpp">
+      <Filter>Common\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Proc\ProcBuffer.cpp">
+      <Filter>Common\Proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Proc\ProcCaptureCamera.cpp">
+      <Filter>Common\Proc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Video\VideoCaptureCallback.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Util\Util.cpp">
+      <Filter>Common\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomCapture.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomCaptureDisplay.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomMessage.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCamRoi.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CaptureManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml\Xml.cpp">
+      <Filter>Common\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml\XmlAttribute.cpp">
+      <Filter>Common\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml\XmlFile.cpp">
+      <Filter>Common\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml\XmlNode.cpp">
+      <Filter>Common\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml\XmlValue.cpp">
+      <Filter>Common\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="TapView.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomScrollView.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomStep.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSequence.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomScrollViewEdit.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Serial\Serial.cpp">
+      <Filter>Common\Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Serial\SerialCtrl.cpp">
+      <Filter>Common\Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Serial\SerialListener.cpp">
+      <Filter>Common\Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Log\LogFile.cpp">
+      <Filter>Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\Step.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepBubble.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepSize.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepStain.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepStamp.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\Inspection.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\Sample.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\SampleSide.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\InspectionCamera.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tracker\LPTracker.cpp">
+      <Filter>Common\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tracker\VideoOutArrow.cpp">
+      <Filter>Common\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepSize.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepStain.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepBubble.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepScratch.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepStamp.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCalibrate.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\until_func.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\EthernetClient.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\EthernetServer.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Ethernet\Ethernet.cpp">
+      <Filter>Common\Ethernet</Filter>
+    </ClCompile>
+    <ClCompile Include="TapMainSize.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TapMainScenario.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TapMainSummary.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLotID.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOption.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepScratch.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepDiffer.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepDiffer.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomScrollViewSize.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptionEtc.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Log\Log.cpp">
+      <Filter>Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStrobeBrightness.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberEdit.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPasswd.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\util_functions.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\NAVIAIMarsTester.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStepName.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgInspection.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStrobe.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSizeGain.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLotIDOnce.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TapMainCount.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MMTimer\MMTimer.cpp">
+      <Filter>Common\MMTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Video\ConvertColor.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLeakDetect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSizeName.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepSizeSecond.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="TapSizeList.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Inspection\StepSizeCalculation.cpp">
+      <Filter>Common\Inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Log\LogHeater.cpp">
+      <Filter>Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Log\LogFileHeater.cpp">
+      <Filter>Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgExtractSample.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NEPES.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NEPES.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\NEPES.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\LaonPeople.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\LaonPeople.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\display_static_LeftTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\display_static_LeftBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\display_static_RightTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\display_static_RightBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_bottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_top.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_Left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_Right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_LeftTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_LeftBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_RightTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\static_RightBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\camera_first.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\camera_second.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\staticstep_LeftTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\staticstep_LeftBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\staticstep_RightTop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\staticstep_RightBottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\replay.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

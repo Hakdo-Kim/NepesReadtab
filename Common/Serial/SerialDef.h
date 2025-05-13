@@ -1,0 +1,20 @@
+#ifndef __LP_SERIAL_DEFINE_H__
+#define __LP_SERIAL_DEFINE_H__
+
+#define MAX_SERIALNAME_LEN				128
+#define DEFAULT_TIMEOUT_CAMERALINK		10000
+#define DEFAULT_SLEEP_CAMERALINK		15
+#define DEFAULT_SLEEP_SERIALPORT		15
+
+typedef BOOL(CALLBACK *FuncNotifySerialListener)(DWORD, void*);
+
+typedef struct
+{
+	TCHAR	m_szPortName[MAX_SERIALNAME_LEN];
+	TCHAR	m_szFriendlyName[MAX_SERIALNAME_LEN];
+	TCHAR	m_szTechnology[MAX_SERIALNAME_LEN];
+
+} SERIALPORT_INFO;
+
+
+#endif

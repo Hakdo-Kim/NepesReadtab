@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="API">
+      <UniqueIdentifier>{50701119-d97e-47b0-b1fe-43bdf6db264b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prebuilt">
+      <UniqueIdentifier>{564aef0d-2063-4292-808c-3d76a3b9f1d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{92ddff0c-ee34-4f64-942f-08a69550b576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Util">
+      <UniqueIdentifier>{0a492c85-99be-43ac-bc7e-7181acd09a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Connect">
+      <UniqueIdentifier>{22520081-d5f4-46e6-abbc-ef5e550ac1f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Connect\Command">
+      <UniqueIdentifier>{a68c6adf-c576-4304-bfc2-370648bdbc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Connect\Transport">
+      <UniqueIdentifier>{9232da53-c70f-47b6-b060-55ddcd63e0d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Connect\Xml">
+      <UniqueIdentifier>{d9dc200f-d7dd-4500-ba73-e423e44ef0de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LibCameraInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Util\Util.cpp">
+      <Filter>Common\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Connect.cpp">
+      <Filter>Common\Connect</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\ConnectGigE.cpp">
+      <Filter>Common\Connect</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Xml\XmlEmulDevice.cpp">
+      <Filter>Common\Connect\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Transport\GigE.cpp">
+      <Filter>Common\Connect\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Command\Command.cpp">
+      <Filter>Common\Connect\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Command\CommandEthernet.cpp">
+      <Filter>Common\Connect\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Xml\XmlCLDevice.cpp">
+      <Filter>Common\Connect\Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\CameraInterface.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\Transport\LibBasler.cpp">
+      <Filter>Common\Connect\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect\ConnectBasler.cpp">
+      <Filter>Common\Connect</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LibCameraInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\lp\inc\clallserial.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\lp\inc\LpGenTLGigE.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\lp\inc\LpGigEVID.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\lp\inc\PixelFormat.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Util\Util.h">
+      <Filter>Common\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Connect.h">
+      <Filter>Common\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\ConnectGigE.h">
+      <Filter>Common\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Xml\XmlEmulDevice.h">
+      <Filter>Common\Connect\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Transport\GigE.h">
+      <Filter>Common\Connect\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Command\Command.h">
+      <Filter>Common\Connect\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Command\CommandEthernet.h">
+      <Filter>Common\Connect\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Command\DefineCommand.h">
+      <Filter>Common\Connect\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Command\DefineEthernet.h">
+      <Filter>Common\Connect\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Command\ProtocolEthernet.h">
+      <Filter>Common\Connect\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraInterfaceDef.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraInterface.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Xml\XmlCLDevice.h">
+      <Filter>Common\Connect\Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\cameralink\cameracontrol\inc\CameraLibrary.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\cameralink\cameracontrol\inc\CLDefine.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Camera\CameraDev.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Prebuilt\lp\inc\UCamLibEx.h">
+      <Filter>Prebuilt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\Transport\LibBasler.h">
+      <Filter>Common\Connect\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Connect\ConnectBasler.h">
+      <Filter>Common\Connect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibCameraInterface.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\LibCameraInterface.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LibCameraInterface.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

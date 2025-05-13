@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Tracker">
+      <UniqueIdentifier>{f5e34619-ab83-42f0-9890-04c3b42db667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{1ac30e8d-e07c-4c12-b4c5-7fbf12ad3cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Tracker">
+      <UniqueIdentifier>{8e51c6c0-f510-48ee-86ae-2cb4c7b4d0f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LibTracker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\PointRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\PolygonRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\RectRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\RingRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\RoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\RoiTrackerDC.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\RotateRectRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\TrackerLibrary.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\CircleRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracker\LineRoiTracker.cpp">
+      <Filter>Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tracker\VideoOutArrow.cpp">
+      <Filter>Common\Tracker</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibTracker.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\LibTracker.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\LineRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\PointRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\PolygonRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\RectRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\RingRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\RoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\RoiTrackerDC.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\RotateRectRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\CircleRoiTracker.h">
+      <Filter>Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracker\VersionTracker.h" />
+    <ClInclude Include="..\Common\Tracker\VideoOutArrow.h">
+      <Filter>Common\Tracker</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LibTracker.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
