@@ -428,13 +428,13 @@ BOOL CNEPESDlg::FuncNotifyInspectionResult(TYPE_CAMERAPOS eCameraPos, TYPE_STEP 
 				int iS1S3Value = 0;
 
 				// Version 1.3.7.9 Name 미설정인 경우 결과 상시 OK
-				//for (int i = 0; i < MAX_GEOMETRY_DISTANCELINE_COUNT; i++)
-				//{
-				//	if (pstOption->m_stSizeName.m_szName[i][0] == '\0')
-				//	{
-				//		pSample->m_SizeCalculationResult.m_stDistance[i].m_bOK = TRUE;
-				//	}
-				//}
+				for (int i = 0; i < MAX_GEOMETRY_DISTANCELINE_COUNT; i++)
+				{
+					if (pstOption->m_stSizeName.m_szName[i][0] == '\0')
+					{
+						pSample->m_SizeCalculationResult.m_stDistance[i].m_bOK = TRUE;
+					}
+				}
 
 				// Version 1.3.6.5 (치수 영역 추가 없이 PLC 통신 데이터 추가 (X1-X2, L))
 				pCaptureManager->SendInspectionResultCommand(eCameraPos, pSample, iDValue, iSValue, iLValue, iX1X2Value, iM1Value, iM2Value, iS1S3Value);

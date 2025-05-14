@@ -183,7 +183,7 @@
 #define STR_SIZEMEASURE_26							_T("S1-S3")
 #define STR_SIZEMEASURE_27							_T("M1-M2")
 #define STR_SIZEMEASURE_28							_T("SS1-SS3")
-// Version 1.3.7.9 Resin Count Add (First)
+// Version 1.3.8.0 Resin Count Add (First)
 
 #define STR_SIZEVALID_S								_T("S")
 #define STR_SIZEVALID_D								_T("d")

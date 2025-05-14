@@ -1257,7 +1257,6 @@ void CStepSizeCalculation::MultiplyGain(CSampleSide& sample)
 	}
 }
 
-// Versio 1.3.7.9 이름 미설정된 치수 -> 무조건 OK 판정
 void CStepSizeCalculation::DecideResult(CSampleSide& sample)
 {
 	//OUTPUT_DISTANCE *stDistance = sample.m_SizeCalculationResult.m_stDistance;

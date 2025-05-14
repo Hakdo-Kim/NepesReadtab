@@ -192,7 +192,7 @@ BOOL CTapMainSummary::OnInitDialog()
 	m_ctlListErrorSizeSampleFirst.InsertColumn(idx, STR_SIZEMEASURE_26, LVCFMT_LEFT, 55, -1);			idx++;
 	m_ctlListErrorSizeSampleFirst.InsertColumn(idx, STR_SIZEMEASURE_27, LVCFMT_LEFT, 55, -1);			idx++;
 	m_ctlListErrorSizeSampleFirst.InsertColumn(idx, STR_SIZEMEASURE_28, LVCFMT_LEFT, 55, -1);			idx++;
-	// Version 1.3.7.9 Resin Count Add (First)
+	// Version 1.3.8.0 Resin Count Add (First)
 
 	idx = 0;
 	// Version 1.3.7.5 R1 ~ R6, SS1 ~ SS3 // Size 50 -> 30
@@ -653,7 +653,7 @@ void CTapMainSummary::UpdateSummary()
 			CUtil::StringFormat(szValue, MAX_NAME_LEN, _T("%d"), pstSummary->m_stSummaryFirst.m_pListErrorSize[i]);
 			m_ctlListErrorSizeSampleFirst.SetItemText(0, i, szValue);
 		}
-		// Version 1.3.7.9 Resin Count Add (First)
+		// Version 1.3.8.0 Resin Count Add (First)
 
 		// Total Count - Second Camera
 		i = 0;
