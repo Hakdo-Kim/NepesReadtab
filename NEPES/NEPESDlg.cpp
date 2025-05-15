@@ -428,13 +428,13 @@ BOOL CNEPESDlg::FuncNotifyInspectionResult(TYPE_CAMERAPOS eCameraPos, TYPE_STEP 
 				int iS1S3Value = 0;
 
 				// Version 1.3.7.9 Name 미설정인 경우 결과 상시 OK
-				for (int i = 0; i < MAX_GEOMETRY_DISTANCELINE_COUNT; i++)
-				{
-					if (pstOption->m_stSizeName.m_szName[i][0] == '\0')
-					{
-						pSample->m_SizeCalculationResult.m_stDistance[i].m_bOK = TRUE;
-					}
-				}
+				//for (int i = 0; i < MAX_GEOMETRY_DISTANCELINE_COUNT; i++)
+				//{
+				//	if (pstOption->m_stSizeName.m_szName[i][0] == '\0')
+				//	{
+				//		pSample->m_SizeCalculationResult.m_stDistance[i].m_bOK = TRUE;
+				//	}
+				//}
 
 				// Version 1.3.6.5 (치수 영역 추가 없이 PLC 통신 데이터 추가 (X1-X2, L))
 				pCaptureManager->SendInspectionResultCommand(eCameraPos, pSample, iDValue, iSValue, iLValue, iX1X2Value, iM1Value, iM2Value, iS1S3Value);
@@ -1139,6 +1139,7 @@ LRESULT CNEPESDlg::OnMsgEdit(WPARAM wParam, LPARAM lParam) // WPARAM: Windows Ha
 		// Version 1.3.7.8
 		if		(TYPE_CAMERAPOS_FIRST == ePos)
 		{
+			if (!m_Sample1) m_Sample1.reset(new CSampleSide());
 			CSampleSide* temp = m_Sample1.get();
 			const INFO_IMAGE* pImage1 = m_stCachedImages.cam1_img1;
 			const INFO_IMAGE* pImage2 = m_stCachedImages.cam1_img2;
@@ -1146,6 +1147,7 @@ LRESULT CNEPESDlg::OnMsgEdit(WPARAM wParam, LPARAM lParam) // WPARAM: Windows Ha
 		}
 		else if (TYPE_CAMERAPOS_SECOND == ePos)
 		{
+			if (!m_Sample2) m_Sample2.reset(new CSampleSide());
 			CSampleSide* temp = m_Sample2.get();
 			const INFO_IMAGE* pImage1 = m_stCachedImages.cam2_img1;
 			const INFO_IMAGE* pImage2 = m_stCachedImages.cam2_img2;

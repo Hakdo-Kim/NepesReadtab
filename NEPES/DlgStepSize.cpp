@@ -239,7 +239,6 @@ BEGIN_MESSAGE_MAP(CDlgStepSize, CDialogEx)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepSize::OnBnClickedBtnStrobe)
 	ON_BN_CLICKED(IDC_BTN_GAIN, &CDlgStepSize::OnBnClickedBtnGain)
 	ON_CBN_SELCHANGE(IDC_COMBO_SELECTSHOTSTEP, &CDlgStepSize::OnCbnSelchangeComboSelectshotstep)
-	// Version 1.3.7.8
 END_MESSAGE_MAP()
 
 

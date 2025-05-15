@@ -493,7 +493,7 @@ typedef struct
 	// Result, Inspection.
 	int m_nSampleCountErrorSize;
 	int m_nSampleCountErrorShape;
-	// Version 1.3.7.9
+	// Version 1.3.8.0
 	int m_nResinCountErrorSize;
 
 	double m_fSampleRatioErrorSize;
