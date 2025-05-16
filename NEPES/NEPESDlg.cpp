@@ -405,12 +405,12 @@ BOOL CNEPESDlg::FuncNotifyInspectionResult(TYPE_CAMERAPOS eCameraPos, TYPE_STEP 
 				// Version 1.3.7.8
 				if (TYPE_CAMERAPOS_FIRST == eCameraPos)
 				{
-					if (!pDlg->m_Sample1) pDlg->m_Sample1.reset(new CSampleSide());
+					if (!pDlg->m_Sample1)			pDlg->m_Sample1.reset(new CSampleSide());
 					if (pDlg->m_Sample1 && pSample) pDlg->m_Sample1->CopyFrom(*pSample);
 				}
 				else if (TYPE_CAMERAPOS_SECOND == eCameraPos)
 				{
-					if (!pDlg->m_Sample2) pDlg->m_Sample2.reset(new CSampleSide());
+					if (!pDlg->m_Sample2)			pDlg->m_Sample2.reset(new CSampleSide());
 					if (pDlg->m_Sample2 && pSample) pDlg->m_Sample2->CopyFrom(*pSample);
 				}
 				//
@@ -453,7 +453,8 @@ BOOL CNEPESDlg::FuncNotifyInspectionResult(TYPE_CAMERAPOS eCameraPos, TYPE_STEP 
 				// Check & Write Image
 				pDlg->DumpImageErrorResult(eCameraPos, eStep, pSample);
 
-
+				// Version 1.3.8.0 Resin Count Add (First)
+				// Resin 메모리 정보 받는 기능 구현
 				////////////////////PLC
 				if (TYPE_CAMERAPOS_FIRST == eCameraPos)
 				{

@@ -284,7 +284,7 @@ static int bubble_int;
 static int scratch_int;
 static int stamp_int;
 
-// Version 1.3.8.0 상시 이미지 저장 기능 사용 시 jpg 이미지 (검사 Step 별 항수 변경 필요 -> 파라미터 추가 예정, UI - 체크박스, 멤버변수)
+// Version 1.3.8.1 상시 이미지 저장 기능 사용 시 jpg 이미지 (검사 Step 별 항수 변경 필요 -> 파라미터 추가 예정, UI - 체크박스, 멤버변수)
 void saveLogPicture(const char* processStepName, const cv::Mat& input){
 			
 	int cnt;
@@ -327,3 +327,4 @@ void saveLogPicture(const char* processStepName, const cv::Mat& input){
 	strcat_s(picturePath, pictureName);
 	cv::imwrite(picturePath, input);
 }
+

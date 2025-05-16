@@ -44,11 +44,6 @@ CDlgSizeName::CDlgSizeName(CWnd* pParent /*=NULL*/)
 	m_szName[21] = STR_SIZEMEASURE_22;
 	m_szName[22] = STR_SIZEMEASURE_23;
 	m_szName[23] = STR_SIZEMEASURE_24;
-	// 치수 연산은 제외
-	/*m_szName[24] = STR_SIZEMEASURE_25;
-	m_szName[25] = STR_SIZEMEASURE_26;
-	m_szName[26] = STR_SIZEMEASURE_27;
-	m_szName[27] = STR_SIZEMEASURE_28;*/
 }
 
 CDlgSizeName::~CDlgSizeName()

@@ -404,6 +404,8 @@ BOOL CStepDiffer::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
+			// Version 1.3.8.1 양품 이미지 저장 시 jpg
+			// saveLogPicture("secondStep", input, m_bImgcompress);
 			saveLogPicture("secondStep", input);
 		}
 	}

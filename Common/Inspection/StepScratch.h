@@ -30,6 +30,8 @@ public:
 	BOOL SetInformation(const INFO_INSPECTION_SCRATCH* pInfoSize);
 
 	BOOL m_bImgLog;
+	// Version 1.3.8.1 양품 이미지 저장 포멧 추가
+	BOOL m_bImgcompress;
 
 protected:
 	static const int MAX_RANGE_VALUE = 256;

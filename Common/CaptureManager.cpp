@@ -3806,6 +3806,7 @@ const int CCaptureManager::AddSampleCount()
 	return pstSummary->m_nTotalCount;
 }
 
+// Version 1.3.8.0 Resin Count Add (First)
 void CCaptureManager::UpdateSummarySampleSide(TYPE_CAMERAPOS eCameraPos, CSampleSide* pSample, INFO_SUMMARY_SAMPLE& stSampleSummary)
 {
 	if (NULL == pSample)
@@ -3823,7 +3824,7 @@ void CCaptureManager::UpdateSummarySampleSide(TYPE_CAMERAPOS eCameraPos, CSample
 
 	// Total Error Count - Sample
 	stSampleSummary.m_nSampleCount++;
-
+	
 	// Result - Size
 	BOOL bSizeResult = TRUE;
 	stSampleSummary.m_stTotalFlag.m_bSizeResult = TRUE;

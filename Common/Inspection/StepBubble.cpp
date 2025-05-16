@@ -203,6 +203,7 @@ BOOL CStepBubble::Process(CSampleSide& sample)
 	}
 	else{
 		if (m_bImgLog){
+			// Version 1.3.8.1 양품 이미지 저장 시 jpg
 			saveLogPicture("thirdStep", input);
 		}
 	}
@@ -434,6 +435,8 @@ BOOL CStepBubble::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
+			// Version 1.3.8.1 양품 이미지 저장 시 jpg
+			// saveLogPicture("thirdStep", input, m_bImgcompress);
 			saveLogPicture("thirdStep", input);
 		}
 	}

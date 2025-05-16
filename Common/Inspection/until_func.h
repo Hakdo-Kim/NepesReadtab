@@ -22,6 +22,7 @@ bool checkBlobSize(cv::Mat &binary, cv::Mat &result, vector<float> vecMaxSize, i
 float calcSize(int x1, int y1, int x2, int y2);
 
 void saveLogPicture(const char* processStepName, const cv::Mat& input);
+// Version 1.3.8.1 양품 이미지 저장 시 jpg
 
 void Eliminate(char *str);
 
