@@ -73,19 +73,33 @@ BOOL CDlgStepStain::OnInitDialog()
 
 	// check box : image log
 	{
-		CButton* pWnd = (CButton*)GetDlgItem(IDC_STAIN_IMG_LOG);
+		CButton* pWnd			= (CButton*)GetDlgItem(IDC_STAIN_IMG_LOG);
+		// Version 1.3.8.1
+		CButton *pWndCompress	= (CButton *)GetDlgItem(IDC_STAIN_IMG_COMPRESS);
 
 		CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
 		CInspection* pInspection = pCaptureManager->GetInspection();
 		CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
 		CStepStain* pStepStain = dynamic_cast<CStepStain*>(pStep);
 
-		if (pStepStain){
-			if (pStepStain->m_bImgLog){
+		if (pStepStain)
+		{
+			if (pStepStain->GetInformation()->m_stParaStainImage.imageWrite)
+			{
 				pWnd->SetCheck(true);
 			}
-			else{
+			else
+			{
 				pWnd->SetCheck(false);
+			}
+			// Version 1.3.8.1
+			if (pStepStain->GetInformation()->m_stParaStainImage.imageCompress)
+			{
+				pWndCompress->SetCheck(true);
+			}
+			else
+			{
+				pWndCompress->SetCheck(false);
 			}
 		}
 	}
@@ -104,6 +118,8 @@ BEGIN_MESSAGE_MAP(CDlgStepStain, CDialogEx)
 	ON_BN_CLICKED(IDC_STEP1_PICTURE_TEST, &CDlgStepStain::OnStep1PictureTest)
 	ON_BN_CLICKED(IDC_SET_TRAINED_FILE, &CDlgStepStain::OnSetTrainedFile)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepStain::OnBnClickedBtnStrobe)
+	// Version 1.3.8.1
+	ON_BN_CLICKED(IDC_STAIN_IMG_COMPRESS, &CDlgStepStain::OnCheckImgCompress)
 END_MESSAGE_MAP()
 
 
@@ -300,6 +316,10 @@ void CDlgStepStain::UpdateCtrlStepStain(const INFO_INSPECTION_STAIN* pInspectSta
 		GetDlgItem(IDC_EDIT_STROBE02)->SetWindowText(szStrobe02);
 	}
 
+	// Version 1.3.8.1
+	((CButton*)GetDlgItem(IDC_STAIN_IMG_LOG))->SetCheck(pInspectStain->m_stParaStainImage.imageWrite);
+	((CButton*)GetDlgItem(IDC_STAIN_IMG_COMPRESS))->SetCheck(pInspectStain->m_stParaStainImage.imageCompress);
+
 	SetParameter(&pInspectStain->m_stParaStain);
 }
 
@@ -428,6 +448,41 @@ void CDlgStepStain::OnCheckImgLog()
 		else
 			pStepStain->m_bImgLog = FALSE;
 	}
+
+	// Version 1.3.7.1
+	INFO_INSPECTION_STAIN stInspectionStain;
+	const INFO_INSPECTION_STAIN* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionStain, pstCurInfo, sizeof(INFO_INSPECTION_STAIN));
+
+	stInspectionStain.m_stParaStainImage.imageWrite = pStepStain->m_bImgLog;
+
+	SetInspectionInfo(&stInspectionStain);
+}
+
+// Version 1.3.8.1
+void CDlgStepStain::OnCheckImgCompress()
+{
+	CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
+	CInspection* pInspection = pCaptureManager->GetInspection();
+
+	CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
+	CStepStain* pStepStain = dynamic_cast<CStepStain*>(pStep);
+	if (pStepStain)
+	{
+		CButton *pWnd = (CButton *)GetDlgItem(IDC_STAIN_IMG_COMPRESS);
+		if (pWnd->GetCheck())
+			pStepStain->m_bImgCompress = TRUE;
+		else
+			pStepStain->m_bImgCompress = FALSE;
+	}
+
+	INFO_INSPECTION_STAIN stInspectionStain;
+	const INFO_INSPECTION_STAIN* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionStain, pstCurInfo, sizeof(INFO_INSPECTION_STAIN));
+
+	stInspectionStain.m_stParaStainImage.imageCompress = pStepStain->m_bImgCompress;
+
+	SetInspectionInfo(&stInspectionStain);
 }
 
 

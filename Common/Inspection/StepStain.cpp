@@ -205,7 +205,9 @@ BOOL CStepStain::Process(CSampleSide& sample)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("firstStep", input);
+			//saveLogPicture("firstStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("firstStep", input, m_bImgCompress);
 		}
 	}
 
@@ -401,7 +403,9 @@ BOOL CStepStain::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("firstStep", input);
+			//saveLogPicture("firstStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("firstStep", input, m_bImgCompress);
 		}
 	}
 

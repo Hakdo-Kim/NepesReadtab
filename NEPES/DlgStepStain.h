@@ -53,5 +53,7 @@ public:
 	afx_msg void OnCheckImgLog();
 	afx_msg void OnStep1PictureTest();
 	afx_msg void OnSetTrainedFile();
+	// Version 1.3.8.1
+	afx_msg void OnCheckImgCompress();
 	
 };

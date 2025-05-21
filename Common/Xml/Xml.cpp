@@ -8348,6 +8348,11 @@ BOOL CXml::LoadInspectionStepStain(INFO_INSPECTION_STAIN& stStain, CXmlNode* pXm
 		{
 			LoadStepJudgmentsParam(stStain.m_stStainStandard, pChildNode);
 		}
+		// Version 1.3.8.1 Image Save & Compress
+		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_IMAGE))
+		{
+			LoadStepImageParam(stStain.m_stParaStainImage, pChildNode);
+		}
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_STEPSTROBELIST))
 		{
 			int idxStrobe = 0;
@@ -8423,6 +8428,11 @@ BOOL CXml::LoadInspectionStepDiffer(INFO_INSPECTION_DIFFER& stDiffeer, CXmlNode*
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_JUDGMENT))
 		{
 			LoadStepJudgmentsParam(stDiffeer.m_stDifferStandard, pChildNode);
+		}
+		// Version 1.3.8.1 Image Save & Compress
+		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_IMAGE))
+		{
+			LoadStepImageParam(stDiffeer.m_stParaDifferImage, pChildNode);
 		}
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_STEPSTROBELIST))
 		{
@@ -8500,6 +8510,11 @@ BOOL CXml::LoadInspectionStepBubble(INFO_INSPECTION_BUBBLE& stBubble, CXmlNode* 
 		{
 			LoadStepJudgmentsParam(stBubble.m_stBubbleStandard, pChildNode);
 		}
+		// Version 1.3.8.1 Image Save & Compress
+		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_IMAGE))
+		{
+			LoadStepImageParam(stBubble.m_stParaBubbleImage, pChildNode);
+		}
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_STEPSTROBELIST))
 		{
 			int idxStrobe = 0;
@@ -8576,6 +8591,11 @@ BOOL CXml::LoadInspectionStepScratch(INFO_INSPECTION_SCRATCH& stScratch, CXmlNod
 		{
 			LoadStepJudgmentsParam(stScratch.m_stScratchStandard, pChildNode);
 		}
+		// Version 1.3.8.1 Image Save & Compress
+		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_IMAGE))
+		{
+			LoadStepImageParam(stScratch.m_stParaScratchImage, pChildNode);
+		}
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_STEPSTROBELIST))
 		{
 			int idxStrobe = 0;
@@ -8651,6 +8671,11 @@ BOOL CXml::LoadInspectionStepStamp(INFO_INSPECTION_STAMP& stStamp, CXmlNode* pXm
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_JUDGMENT))
 		{
 			LoadStepJudgmentsParam(stStamp.m_stStampStandard, pChildNode);
+		}
+		// Version 1.3.8.1 Image Save & Compress
+		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_PARAM_IMAGE))
+		{
+			LoadStepImageParam(stStamp.m_stParaStampImage, pChildNode);
 		}
 		else if (CUtil::StringCompare((LPTSTR)(LPCTSTR)pTitle, XML_INSPECT_STEPSTROBELIST))
 		{
@@ -8841,7 +8866,35 @@ BOOL CXml::LoadStepJudgmentsParam(INFO_JUDGMENT_PARA& stJudgParam, CXmlNode* pXm
 	return TRUE;
 }
 
+// Version 1.3.8.1
+BOOL CXml::LoadStepImageParam(INFO_IMAGE_PARA& stImageParam, CXmlNode* pXmlNode)
+{
+	if (NULL == pXmlNode)
+		return FALSE;
 
+	CXmlAttribute* pXmlAttr = NULL;
+	int nValue = 0;
+	double fValue = 0.0f;
+
+	pXmlAttr = pXmlNode->GetAttribute(XML_INSPECTATTR_IMAGEPARAM_WRITE);
+	if (pXmlAttr)
+	{
+		pXmlAttr->GetValue(&nValue, sizeof(int));
+		if (nValue == 0)	stImageParam.imageWrite = FALSE;
+		else				stImageParam.imageWrite = TRUE;
+	}
+
+	nValue = 0;
+	pXmlAttr = pXmlNode->GetAttribute(XML_INSPECTATTR_IMAGEPARAM_COMPRESS);
+	if (pXmlAttr)
+	{
+		pXmlAttr->GetValue(&nValue, sizeof(int));
+		if (nValue == 0)	stImageParam.imageCompress = FALSE;
+		else				stImageParam.imageCompress = TRUE;
+	}
+
+	return TRUE;
+}
 
 
 
@@ -9133,7 +9186,10 @@ CXmlNode* CXml::SaveInspectionStain(const INFO_INSPECTION_STAIN& stStain)
 	// Judgment Param
 	CXmlNode* pJudgNode = SaveStepJudgmentsParam(stStain.m_stStainStandard);
 	pXmlNode->AddNode(pJudgNode);	delete pJudgNode;
-
+	
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* pImageNode = SaveStepImageParam(stStain.m_stParaStainImage);
+	pXmlNode->AddNode(pImageNode);	delete pImageNode;
 
 	return pXmlNode;
 }
@@ -9183,6 +9239,10 @@ CXmlNode* CXml::SaveInspectionDiffer(const INFO_INSPECTION_DIFFER& stDiffer)
 	CXmlNode* pJudgNode = SaveStepJudgmentsParam(stDiffer.m_stDifferStandard);
 	pXmlNode->AddNode(pJudgNode);	delete pJudgNode;
 
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* pImageNode = SaveStepImageParam(stDiffer.m_stParaDifferImage);
+	pXmlNode->AddNode(pImageNode);	delete pImageNode;
+
 	return pXmlNode;
 }
 
@@ -9231,6 +9291,9 @@ CXmlNode* CXml::SaveInspectionBubble(const INFO_INSPECTION_BUBBLE& stBubble)
 	CXmlNode* pJudgNode = SaveStepJudgmentsParam(stBubble.m_stBubbleStandard);
 	pXmlNode->AddNode(pJudgNode);	delete pJudgNode;
 
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* pImageNode = SaveStepImageParam(stBubble.m_stParaBubbleImage);
+	pXmlNode->AddNode(pImageNode);	delete pImageNode;
 
 	return pXmlNode;
 }
@@ -9280,6 +9343,10 @@ CXmlNode* CXml::SaveInspectionScratch(const INFO_INSPECTION_SCRATCH& stScratch)
 	CXmlNode* pJudgNode = SaveStepJudgmentsParam(stScratch.m_stScratchStandard);
 	pXmlNode->AddNode(pJudgNode);	delete pJudgNode;
 
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* pImageNode = SaveStepImageParam(stScratch.m_stParaScratchImage);
+	pXmlNode->AddNode(pImageNode);	delete pImageNode;
+
 	return pXmlNode;
 }
 
@@ -9328,6 +9395,9 @@ CXmlNode* CXml::SaveInspectionStamp(const INFO_INSPECTION_STAMP& stStamp)
 	CXmlNode* pJudgNode = SaveStepJudgmentsParam(stStamp.m_stStampStandard);
 	pXmlNode->AddNode(pJudgNode);	delete pJudgNode;
 
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* pImageNode = SaveStepImageParam(stStamp.m_stParaStampImage);
+	pXmlNode->AddNode(pImageNode);	delete pImageNode;
 
 	return pXmlNode;
 }
@@ -9613,6 +9683,23 @@ CXmlNode* CXml::SaveStepJudgmentsParam(const INFO_JUDGMENT_PARA& stJudgParam)
 
 	AddAttributeInt(pXmlNode, XML_INSPECTATTR_JUDGPARAM_FAULTNUM, stJudgParam.faultNum);
 	AddAttributeDouble(pXmlNode, XML_INSPECTATTR_JUDGBPARAM_FAULTSIZE, stJudgParam.faultSize);
+
+	return pXmlNode;
+
+}
+
+// Version 1.3.8.1 Image Save & Compress
+CXmlNode* CXml::SaveStepImageParam(const INFO_IMAGE_PARA& stImageParam)
+{
+	CXmlNode* pXmlNode = new CXmlNode(XML_INSPECT_PARAM_IMAGE, NULL);
+	int nValue;
+
+	if (stImageParam.imageWrite)	nValue = 1;
+	else							nValue = 0;
+	AddAttributeInt(pXmlNode, XML_INSPECTATTR_IMAGEPARAM_WRITE, nValue);
+	if (stImageParam.imageCompress)	nValue = 1;
+	else							nValue = 0;
+	AddAttributeInt(pXmlNode, XML_INSPECTATTR_IMAGEPARAM_COMPRESS, nValue);
 
 	return pXmlNode;
 

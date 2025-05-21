@@ -75,6 +75,8 @@ BOOL CDlgStepScratch::OnInitDialog()
 	// check box : image log
 	{
 		CButton *pWnd = (CButton *)GetDlgItem(IDC_SCRATCH_IMG_LOG);
+		// Version 1.3.8.1
+		CButton *pWndCompress = (CButton *)GetDlgItem(IDC_SCRATCH_IMG_COMPRESS);
 
 		CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
 		CInspection* pInspection = pCaptureManager->GetInspection();
@@ -82,12 +84,23 @@ BOOL CDlgStepScratch::OnInitDialog()
 		CStepScratch* pStepScratch = dynamic_cast<CStepScratch*>(pStep);
 
 		if (pStepScratch)
-		{			
-			if (pStepScratch->m_bImgLog){
+		{
+			if (pStepScratch->GetInformation()->m_stParaScratchImage.imageWrite)
+			{
 				pWnd->SetCheck(true);
 			}
-			else{
+			else
+			{
 				pWnd->SetCheck(false);
+			}
+			// Version 1.3.8.1
+			if (pStepScratch->GetInformation()->m_stParaScratchImage.imageCompress)
+			{
+				pWndCompress->SetCheck(true);
+			}
+			else
+			{
+				pWndCompress->SetCheck(false);
 			}
 		}
 	}
@@ -105,6 +118,8 @@ BEGIN_MESSAGE_MAP(CDlgStepScratch, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_BLOB, &CDlgStepScratch::OnNMCustomdrawSliderBlob)
 	ON_BN_CLICKED(IDC_SCRATCH_IMG_LOG, &CDlgStepScratch::OnCheckImgLog)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepScratch::OnBnClickedBtnStrobe)
+	// Version 1.3.8.1
+	ON_BN_CLICKED(IDC_SCRATCH_IMG_COMPRESS, &CDlgStepScratch::OnCheckImgCompress)
 END_MESSAGE_MAP()
 
 
@@ -293,6 +308,10 @@ void CDlgStepScratch::UpdateCtrlStepScratch(const INFO_INSPECTION_SCRATCH* pInsp
 		GetDlgItem(IDC_EDIT_STROBE02)->SetWindowText(szStrobe02);
 	}
 
+	// Version 1.3.8.1
+	((CButton*)GetDlgItem(IDC_SCRATCH_IMG_LOG))->SetCheck(pInspectScratch->m_stParaScratchImage.imageWrite);
+	((CButton*)GetDlgItem(IDC_SCRATCH_IMG_COMPRESS))->SetCheck(pInspectScratch->m_stParaScratchImage.imageCompress);
+
 	SetParameter(&pInspectScratch->m_stParaScratch);
 }
 
@@ -422,5 +441,23 @@ void CDlgStepScratch::OnCheckImgLog()
 			pStepScratch->m_bImgLog = TRUE;
 		else
 			pStepScratch->m_bImgLog = FALSE;
+	}
+}
+
+// Version 1.3.8.1
+void CDlgStepScratch::OnCheckImgCompress()
+{
+	CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
+	CInspection* pInspection = pCaptureManager->GetInspection();
+
+	CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
+	CStepScratch* pStepScratch = dynamic_cast<CStepScratch*>(pStep);
+	if (pStepScratch)
+	{
+		CButton *pWnd = (CButton *)GetDlgItem(IDC_SCRATCH_IMG_COMPRESS);
+		if (pWnd->GetCheck())
+			pStepScratch->m_bImgCompress = TRUE;
+		else
+			pStepScratch->m_bImgCompress = FALSE;
 	}
 }

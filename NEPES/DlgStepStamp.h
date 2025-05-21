@@ -52,5 +52,7 @@ public:
 	
 	
 	afx_msg void OnCheckImgLog();
+	// Version 1.3.8.1
+	afx_msg void OnCheckImgCompress();
 	
 };

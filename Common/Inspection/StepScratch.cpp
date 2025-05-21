@@ -201,7 +201,9 @@ BOOL CStepScratch::Process(CSampleSide& sample)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("forthStep", input);
+			//saveLogPicture("forthStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("forthStep", input, m_bImgCompress);
 		}
 	}
 
@@ -396,7 +398,9 @@ BOOL CStepScratch::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("forthStep", input);
+			//saveLogPicture("forthStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("forthStep", input, m_bImgCompress);
 		}
 	}
 

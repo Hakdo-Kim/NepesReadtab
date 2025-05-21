@@ -74,6 +74,8 @@ BOOL CDlgStepDiffer::OnInitDialog()
 
 	{
 		CButton *pWnd = (CButton *)GetDlgItem(IDC_DIFFER_IMG_LOG);
+		// Version 1.3.8.1
+		CButton *pWndCompress = (CButton *)GetDlgItem(IDC_DIFFER_IMG_COMPRESS);
 
 		CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
 		CInspection* pInspection = pCaptureManager->GetInspection();
@@ -81,12 +83,23 @@ BOOL CDlgStepDiffer::OnInitDialog()
 		CStepDiffer* pStepDiffer = dynamic_cast<CStepDiffer*>(pStep);
 
 		if (pStepDiffer)
-		{			
-			if (pStepDiffer->m_bImgLog){
+		{
+			if (pStepDiffer->GetInformation()->m_stParaDifferImage.imageWrite)
+			{
 				pWnd->SetCheck(true);
 			}
-			else{
+			else
+			{
 				pWnd->SetCheck(false);
+			}
+			// Version 1.3.8.1
+			if (pStepDiffer->GetInformation()->m_stParaDifferImage.imageCompress)
+			{
+				pWndCompress->SetCheck(true);
+			}
+			else
+			{
+				pWndCompress->SetCheck(false);
 			}
 		}
 	}
@@ -105,6 +118,8 @@ BEGIN_MESSAGE_MAP(CDlgStepDiffer, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_BLOB, &CDlgStepDiffer::OnNMCustomdrawSliderBlob)
 	ON_BN_CLICKED(IDC_DIFFER_IMG_LOG, &CDlgStepDiffer::OnCheckImgLog)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepDiffer::OnBnClickedBtnStrobe)
+	// Version 1.3.8.1
+	ON_BN_CLICKED(IDC_DIFFER_IMG_COMPRESS, &CDlgStepDiffer::OnCheckImgCompress)
 END_MESSAGE_MAP()
 
 
@@ -299,6 +314,10 @@ void CDlgStepDiffer::UpdateCtrlStepDiffer(const INFO_INSPECTION_DIFFER* pInspect
 		GetDlgItem(IDC_EDIT_STROBE02)->SetWindowText(szStrobe02);
 	}
 
+	// Version 1.3.8.1
+	((CButton*)GetDlgItem(IDC_DIFFER_IMG_LOG))->SetCheck(pInspectDiffer->m_stParaDifferImage.imageWrite);
+	((CButton*)GetDlgItem(IDC_DIFFER_IMG_COMPRESS))->SetCheck(pInspectDiffer->m_stParaDifferImage.imageCompress);
+
 	SetParameter(&pInspectDiffer->m_stParaDiffer);
 }
 
@@ -427,4 +446,39 @@ void CDlgStepDiffer::OnCheckImgLog()
 		else
 			pStepDiffer->m_bImgLog = FALSE;
 	}
+
+	// Version 1.3.8.1
+	INFO_INSPECTION_DIFFER stInspectionDiffer;
+	const INFO_INSPECTION_DIFFER* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionDiffer, pstCurInfo, sizeof(INFO_INSPECTION_DIFFER));
+
+	stInspectionDiffer.m_stParaDifferImage.imageWrite = pStepDiffer->m_bImgLog;
+
+	SetInspectionInfo(&stInspectionDiffer);
+}
+
+// Version 1.3.8.1
+void CDlgStepDiffer::OnCheckImgCompress()
+{
+	CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
+	CInspection* pInspection = pCaptureManager->GetInspection();
+
+	CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
+	CStepDiffer* pStepDiffer = dynamic_cast<CStepDiffer*>(pStep);
+	if (pStepDiffer)
+	{
+		CButton *pWnd = (CButton *)GetDlgItem(IDC_DIFFER_IMG_COMPRESS);
+		if (pWnd->GetCheck())
+			pStepDiffer->m_bImgCompress = 1;
+		else
+			pStepDiffer->m_bImgCompress = 0;
+	}
+
+	INFO_INSPECTION_DIFFER stInspectionDiffer;
+	const INFO_INSPECTION_DIFFER* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionDiffer, pstCurInfo, sizeof(INFO_INSPECTION_DIFFER));
+
+	stInspectionDiffer.m_stParaDifferImage.imageCompress = pStepDiffer->m_bImgCompress;
+
+	SetInspectionInfo(&stInspectionDiffer);
 }

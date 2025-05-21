@@ -35,6 +35,8 @@ public:
 #endif
 	std::string datName;
 	BOOL m_bImgLog;
+	// Version 1.3.8.1 Image Log Format (jpg)
+	BOOL m_bImgCompress;
 
 protected:
 	static const int MAX_RANGE_VALUE = 256;

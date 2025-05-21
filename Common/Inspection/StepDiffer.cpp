@@ -202,7 +202,9 @@ BOOL CStepDiffer::Process(CSampleSide& sample)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("secondStep", input);
+			//saveLogPicture("secondStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("secondStep", input, m_bImgCompress);
 		}
 	}
 
@@ -404,7 +406,9 @@ BOOL CStepDiffer::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("secondStep", input);
+			//saveLogPicture("secondStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("secondStep", input, m_bImgCompress);
 		}
 	}
 

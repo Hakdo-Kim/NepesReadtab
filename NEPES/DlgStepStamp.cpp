@@ -75,6 +75,8 @@ BOOL CDlgStepStamp::OnInitDialog()
 	// check box : image log
 	{
 		CButton *pWnd = (CButton *)GetDlgItem(IDC_STAMP_IMG_LOG);
+		// Version 1.3.8.1
+		CButton *pWndCompress = (CButton *)GetDlgItem(IDC_STAMP_IMG_COMPRESS);
 
 		CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
 		CInspection* pInspection = pCaptureManager->GetInspection();
@@ -83,11 +85,22 @@ BOOL CDlgStepStamp::OnInitDialog()
 
 		if (pStepStamp)
 		{
-			if (pStepStamp->m_bImgLog){
+			if (pStepStamp->GetInformation()->m_stParaStampImage.imageWrite)
+			{
 				pWnd->SetCheck(true);
 			}
-			else{
+			else
+			{
 				pWnd->SetCheck(false);
+			}
+			// Version 1.3.8.1
+			if (pStepStamp->GetInformation()->m_stParaStampImage.imageCompress)
+			{
+				pWndCompress->SetCheck(true);
+			}
+			else
+			{
+				pWndCompress->SetCheck(false);
 			}
 		}
 	}
@@ -104,6 +117,8 @@ BEGIN_MESSAGE_MAP(CDlgStepStamp, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_BLOB, &CDlgStepStamp::OnNMCustomdrawSliderBlob)
 	ON_BN_CLICKED(IDC_STAMP_IMG_LOG, &CDlgStepStamp::OnCheckImgLog)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepStamp::OnBnClickedBtnStrobe)
+	// Version 1.3.8.1
+	ON_BN_CLICKED(IDC_STAMP_IMG_COMPRESS, &CDlgStepStamp::OnCheckImgCompress)
 END_MESSAGE_MAP()
 
 
@@ -291,6 +306,10 @@ void CDlgStepStamp::UpdateCtrlStepStamp(const INFO_INSPECTION_STAMP* pInspectSta
 		GetDlgItem(IDC_EDIT_STROBE02)->SetWindowText(szStrobe02);
 	}
 
+	// Version 1.3.8.1
+	((CButton*)GetDlgItem(IDC_STAMP_IMG_LOG))->SetCheck(pInspectStamp->m_stParaStampImage.imageWrite);
+	((CButton*)GetDlgItem(IDC_STAMP_IMG_COMPRESS))->SetCheck(pInspectStamp->m_stParaStampImage.imageCompress);
+
 	SetParameter(&pInspectStamp->m_stParaStamp);
 }
 
@@ -421,4 +440,40 @@ void CDlgStepStamp::OnCheckImgLog()
 		else
 			pStepStamp->m_bImgLog = FALSE;
 	}
+
+	// Version 1.3.8.1
+	INFO_INSPECTION_STAMP stInspectionStamp;
+	const INFO_INSPECTION_STAMP* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionStamp, pstCurInfo, sizeof(INFO_INSPECTION_STAMP));
+
+	stInspectionStamp.m_stParaStampImage.imageWrite = pStepStamp->m_bImgLog;
+
+	SetInspectionInfo(&stInspectionStamp);
+}
+
+// Version 1.3.8.1
+void CDlgStepStamp::OnCheckImgCompress()
+{
+	CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
+	CInspection* pInspection = pCaptureManager->GetInspection();
+
+	CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
+	CStepStamp* pStepStamp = dynamic_cast<CStepStamp*>(pStep);
+	if (pStepStamp)
+	{
+		CButton *pWnd = (CButton *)GetDlgItem(IDC_STAMP_IMG_COMPRESS);
+		if (pWnd->GetCheck())
+			pStepStamp->m_bImgCompress = TRUE;
+		else
+			pStepStamp->m_bImgCompress = FALSE;
+	}
+
+	// Version 1.3.8.1
+	INFO_INSPECTION_STAMP stInspectionStamp;
+	const INFO_INSPECTION_STAMP* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionStamp, pstCurInfo, sizeof(INFO_INSPECTION_STAMP));
+
+	stInspectionStamp.m_stParaStampImage.imageCompress = pStepStamp->m_bImgCompress;
+
+	SetInspectionInfo(&stInspectionStamp);
 }

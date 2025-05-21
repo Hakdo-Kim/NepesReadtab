@@ -158,6 +158,8 @@ typedef enum
 #define REG_VALUE_OPTION_SAVETEXT			_T("OptSaveText")
 #define REG_VALUE_OPTION_SAVEERRORIMAGE		_T("OptSaveEImage")
 #define REG_VALUE_OPTION_SAVEPROBIMAGE		_T("OptSavePImage")
+// Version 1.3.8.1 
+#define REG_VALUE_OPTION_SAVEIMAGECOMPRESS	_T("OptSaveImageCompress")
 
 #define REG_VALUE_OPTION_SAVEIMAGEFORMAT	_T("OptSaveImageFormat")
 #define REG_VALUE_OPTION_SAVEOKIMAGE		_T("OptSaveOKImage")
@@ -440,6 +442,9 @@ typedef struct
 	// Version 1.3.7.6 Save OK Image Period
 	BOOL m_bSaveOKImage_Period;
 	int m_nSavePeriodTime;
+
+	// Version 1.3.8.1
+	BOOL m_bSaveImageCompress;
 } INFO_OPTIONLOG;
 
 
@@ -657,6 +662,14 @@ typedef struct
 
 } INFO_JUDGMENT_PARA;
 
+// Version 1.3.8.1
+typedef struct
+{
+	BOOL imageWrite;
+	BOOL imageCompress;
+
+} INFO_IMAGE_PARA;
+
 typedef struct
 {
 	TYPE_STROBE m_eStrobeType;
@@ -691,6 +704,8 @@ typedef struct
 	INFO_MARS_PARA m_stParaStain;
 	INFO_CALIB_PARA m_stConstStain;
 	INFO_JUDGMENT_PARA m_stStainStandard;
+	// Version 1.3.8.1
+	INFO_IMAGE_PARA m_stParaStainImage;
 
 } INFO_INSPECTION_STAIN;
 
@@ -704,6 +719,8 @@ typedef struct
 	INFO_MARS_PARA m_stParaDiffer;
 	INFO_CALIB_PARA m_stConstDiffer;
 	INFO_JUDGMENT_PARA m_stDifferStandard;
+	// Version 1.3.8.1
+	INFO_IMAGE_PARA m_stParaDifferImage;
 
 } INFO_INSPECTION_DIFFER;
 
@@ -717,6 +734,8 @@ typedef struct
 	INFO_MARS_PARA m_stParaBubble;
 	INFO_CALIB_PARA m_stConstBubble;
 	INFO_JUDGMENT_PARA m_stBubbleStandard;
+	// Version 1.3.8.1
+	INFO_IMAGE_PARA m_stParaBubbleImage;
 
 } INFO_INSPECTION_BUBBLE;
 
@@ -730,6 +749,8 @@ typedef struct
 	INFO_MARS_PARA m_stParaScratch;
 	INFO_CALIB_PARA m_stConstScratch;
 	INFO_JUDGMENT_PARA m_stScratchStandard;
+	// Version 1.3.8.1
+	INFO_IMAGE_PARA m_stParaScratchImage;
 
 } INFO_INSPECTION_SCRATCH;
 
@@ -743,6 +764,8 @@ typedef struct
 	INFO_MARS_PARA m_stParaStamp;
 	INFO_CALIB_PARA m_stConstStamp;
 	INFO_JUDGMENT_PARA m_stStampStandard;
+	// Version 1.3.8.1
+	INFO_IMAGE_PARA m_stParaStampImage;
 
 } INFO_INSPECTION_STAMP;
 

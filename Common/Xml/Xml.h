@@ -316,8 +316,8 @@ protected:
 	BOOL LoadStepMarsParam(INFO_MARS_PARA& stMarsParam, CXmlNode* pXmlNode);
 	BOOL LoadStepCalibParam(INFO_CALIB_PARA& stCalibParam, CXmlNode* pXmlNode);
 	BOOL LoadStepJudgmentsParam(INFO_JUDGMENT_PARA& stJudgParam, CXmlNode* pXmlNode);
-	
-
+	// Version 1.3.8.1 Image Save & Compress
+	BOOL LoadStepImageParam(INFO_IMAGE_PARA& stImageParam, CXmlNode* pXmlNode);
 	
 
 	CXmlNode* SaveInspection(const INFO_INSPECTION& stInspection, TYPE_CAMERAPOS ePos);
@@ -335,7 +335,7 @@ protected:
 	CXmlNode* SaveStepMarsParam(const INFO_MARS_PARA& stMarsParam);
 	CXmlNode* SaveStepCalibParam(const INFO_CALIB_PARA& stCalibParam);
 	CXmlNode* SaveStepJudgmentsParam(const INFO_JUDGMENT_PARA& stJudgParam);
-
-
+	// Version 1.3.8.1 Image Save & Compress
+	CXmlNode* SaveStepImageParam(const INFO_IMAGE_PARA& stImageParam);
 	
 };

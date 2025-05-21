@@ -477,7 +477,8 @@
 #define XML_INSPECT_PARAM_MARS					_T("PARAMMARS")
 #define XML_INSPECT_PARAM_CALIB					_T("PARAMCALIB")
 #define XML_INSPECT_PARAM_JUDGMENT				_T("PARAMJUDGMENT")
-
+// Version 1.3.8.1 Image Save & Compress
+#define XML_INSPECT_PARAM_IMAGE					_T("PARAIMAGE")
 
 #define XML_INSPECTATTR_CAMERANUM				_T("cameraNum")
 #define XML_INSPECTATTR_STEPENABLE				_T("stepEnable")
@@ -556,8 +557,9 @@
 
 #define XML_INSPECTATTR_JUDGPARAM_FAULTNUM			_T("faultNum")
 #define XML_INSPECTATTR_JUDGBPARAM_FAULTSIZE		_T("faultSize")
-
-
+// Version 1.3.8.1
+#define XML_INSPECTATTR_IMAGEPARAM_WRITE			_T("imageWrite")
+#define XML_INSPECTATTR_IMAGEPARAM_COMPRESS			_T("imageCompress")
 
 
 

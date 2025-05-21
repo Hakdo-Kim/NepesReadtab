@@ -72,7 +72,9 @@ BOOL CDlgStepBubble::OnInitDialog()
 	}
 
 	{
-		CButton *pWnd = (CButton *)GetDlgItem(IDC_BUBBLE_IMG_LOG);
+		CButton *pWnd			= (CButton *)GetDlgItem(IDC_BUBBLE_IMG_LOG);
+		// Version 1.3.8.1
+		CButton *pWndCompress	= (CButton *)GetDlgItem(IDC_BUBBLE_IMG_COMPRESS);
 
 		CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
 		CInspection* pInspection = pCaptureManager->GetInspection();
@@ -81,11 +83,22 @@ BOOL CDlgStepBubble::OnInitDialog()
 
 		if (pStepBubble)
 		{
-			if (pStepBubble->m_bImgLog){
-				pWnd->SetCheck(true);
+			if (pStepBubble->GetInformation()->m_stParaBubbleImage.imageWrite)
+			{
+				pWnd->SetCheck(true); 
 			}
-			else{
-				pWnd->SetCheck(false);
+			else
+			{
+				pWnd->SetCheck(false); 
+			}
+			// Version 1.3.8.1
+			if (pStepBubble->GetInformation()->m_stParaBubbleImage.imageCompress)	
+			{
+				pWndCompress->SetCheck(true); 
+			}
+			else
+			{
+				pWndCompress->SetCheck(false); 
 			}
 		}
 	}
@@ -103,6 +116,8 @@ BEGIN_MESSAGE_MAP(CDlgStepBubble, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_BLOB, &CDlgStepBubble::OnNMCustomdrawSliderBlob)
 	ON_BN_CLICKED(IDC_BUBBLE_IMG_LOG, &CDlgStepBubble::OnCheckImgLog)
 	ON_BN_CLICKED(IDC_BTN_STROBE, &CDlgStepBubble::OnBnClickedBtnStrobe)
+	// Version 1.3.8.1
+	ON_BN_CLICKED(IDC_BUBBLE_IMG_COMPRESS, &CDlgStepBubble::OnCheckImgCompress)
 END_MESSAGE_MAP()
 
 
@@ -298,6 +313,10 @@ void CDlgStepBubble::UpdateCtrlStepBubble(const INFO_INSPECTION_BUBBLE* pInspect
 		GetDlgItem(IDC_EDIT_STROBE02)->SetWindowText(szStrobe02);
 	}
 
+	// Version 1.3.8.1
+	((CButton*)GetDlgItem(IDC_BUBBLE_IMG_LOG))->SetCheck(pInspectBubble->m_stParaBubbleImage.imageWrite);
+	((CButton*)GetDlgItem(IDC_BUBBLE_IMG_COMPRESS))->SetCheck(pInspectBubble->m_stParaBubbleImage.imageCompress);
+
 	SetParameter(&pInspectBubble->m_stParaBubble);
 }
 
@@ -426,4 +445,40 @@ void CDlgStepBubble::OnCheckImgLog()
 		else
 			pStepBubble->m_bImgLog = FALSE;
 	}
+
+	// Version 1.3.8.1
+	INFO_INSPECTION_BUBBLE stInspectionBubble;
+	const INFO_INSPECTION_BUBBLE* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionBubble, pstCurInfo, sizeof(INFO_INSPECTION_BUBBLE));
+
+	stInspectionBubble.m_stParaBubbleImage.imageWrite = pStepBubble->m_bImgLog;
+
+	SetInspectionInfo(&stInspectionBubble);
+}
+
+// Version 1.3.8.1
+void CDlgStepBubble::OnCheckImgCompress()
+{
+	CCaptureManager* pCaptureManager = CCaptureManager::GetInstance();
+	CInspection* pInspection = pCaptureManager->GetInspection();
+
+	CStep* pStep = pInspection->GetInsectionStep(m_eCameraPos, m_eStep);
+	CStepBubble* pStepBubble = dynamic_cast<CStepBubble*>(pStep);
+	if (pStepBubble)
+	{
+		CButton *pWnd = (CButton *)GetDlgItem(IDC_BUBBLE_IMG_COMPRESS);
+		if (pWnd->GetCheck())
+			pStepBubble->m_bImgCompress = TRUE;
+		else
+			pStepBubble->m_bImgCompress = FALSE;
+	}
+
+	// Version 1.3.8.1
+	INFO_INSPECTION_BUBBLE stInspectionBubble;
+	const INFO_INSPECTION_BUBBLE* pstCurInfo = GetInspectionInfo();
+	memcpy(&stInspectionBubble, pstCurInfo, sizeof(INFO_INSPECTION_BUBBLE));
+
+	stInspectionBubble.m_stParaBubbleImage.imageCompress = pStepBubble->m_bImgCompress;
+
+	SetInspectionInfo(&stInspectionBubble);
 }

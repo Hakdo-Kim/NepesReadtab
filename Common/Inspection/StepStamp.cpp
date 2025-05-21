@@ -203,7 +203,9 @@ BOOL CStepStamp::Process(CSampleSide& sample)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("fifthStep", input);
+			//saveLogPicture("fifthStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("fifthStep", input, m_bImgCompress);
 		}
 	}
 
@@ -402,7 +404,9 @@ BOOL CStepStamp::Process(CSampleSide& sample, cv::Mat captureImg)
 	}
 	else{
 		if (m_bImgLog){
-			saveLogPicture("fifthStep", input);
+			//saveLogPicture("fifthStep", input);
+			// Version 1.3.8.1 Image Log Format (jpg)
+			saveLogPicture("fifthStep", input, m_bImgCompress);
 		}
 	}
 

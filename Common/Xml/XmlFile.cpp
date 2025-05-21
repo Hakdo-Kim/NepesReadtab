@@ -465,6 +465,10 @@ TYPE_XML_VALUE CXmlFile::GetAttributeValueType(TCHAR* pTitle)
 	else if (CUtil::StringCompare(pTitle, XML_INSPECTATTR_JUDGPARAM_FAULTNUM))			eType = TYPE_XML_VALUE_SIGNED;
 	else if (CUtil::StringCompare(pTitle, XML_INSPECTATTR_JUDGBPARAM_FAULTSIZE))		eType = TYPE_XML_VALUE_DOUBLE;
 
+	// Version 1.3.8.1
+	else if (CUtil::StringCompare(pTitle, XML_INSPECTATTR_IMAGEPARAM_WRITE))			eType = TYPE_XML_VALUE_SIGNED;
+	else if (CUtil::StringCompare(pTitle, XML_INSPECTATTR_IMAGEPARAM_COMPRESS))			eType = TYPE_XML_VALUE_SIGNED;
+
 
 	return eType;
 }

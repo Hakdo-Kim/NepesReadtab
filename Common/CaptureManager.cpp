@@ -225,9 +225,6 @@ BOOL CCaptureManager::InitLibrary()
 	else
 		m_stOptionEtc.m_stLogInfo.m_bSaveProbImage = (BOOL)dwValue;
 
-	this->m_Log.UpdateLogInformation(&m_stOptionEtc.m_stLogInfo);
-	this->m_LogHeater.UpdateLogInformation(&m_stOptionEtc.m_stLogInfo);
-
 	// Ver 1.362
 	// 2022-04-08 추가
 	// Save Image Format 초기값 설정
@@ -266,6 +263,16 @@ BOOL CCaptureManager::InitLibrary()
 	else
 		m_stOptionEtc.m_stLogInfo.m_nSavePeriodTime = dwValue;
 
+	// Version 1.3.8.1
+	bResult = CUtil::GetRegDword(REG_ROOT_PATH, REG_VALUE_OPTION_SAVEIMAGECOMPRESS, dwValue);
+	if (FALSE == bResult)
+		m_stOptionEtc.m_stLogInfo.m_bSaveImageCompress = FALSE;
+	else
+		m_stOptionEtc.m_stLogInfo.m_bSaveImageCompress = (BOOL)dwValue;
+
+
+	this->m_Log.UpdateLogInformation(&m_stOptionEtc.m_stLogInfo);
+	this->m_LogHeater.UpdateLogInformation(&m_stOptionEtc.m_stLogInfo);
 
 #ifdef DEF_FREERUN_CAPTURE
 	SetReadySnapCapture(FALSE);

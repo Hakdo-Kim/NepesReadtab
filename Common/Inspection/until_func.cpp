@@ -284,7 +284,6 @@ static int bubble_int;
 static int scratch_int;
 static int stamp_int;
 
-// Version 1.3.8.0 상시 이미지 저장 기능 사용 시 jpg 이미지 (검사 Step 별 항수 변경 필요 -> 파라미터 추가 예정, UI - 체크박스, 멤버변수)
 void saveLogPicture(const char* processStepName, const cv::Mat& input){
 			
 	int cnt;
@@ -323,6 +322,64 @@ void saveLogPicture(const char* processStepName, const cv::Mat& input){
 	strcat_s(picturePath, tmpString);
 	char pictureName[30] = "";
 	sprintf(pictureName, "%d.png", cnt);
+	strcat_s(picturePath, processStepName);
+	strcat_s(picturePath, pictureName);
+	cv::imwrite(picturePath, input);
+}
+
+// Version 1.3.8.1 Image Log Format (jpg)
+void saveLogPicture(const char* processStepName, const cv::Mat& input, bool isCompress)
+{
+	int cnt;
+	//if (!strcmp(processStepName, "firstStep")){
+	//	cnt = stain_int++;
+	//}
+	//else if (!strcmp(processStepName, "secondStep")){
+	//	cnt = differ_int++;
+	//}
+	//else if (!strcmp(processStepName, "thirdStep")){
+	//	cnt = bubble_int++;
+	//}
+	//else if (!strcmp(processStepName, "forthStep")){
+	//	cnt = scratch_int++;
+	//}
+	//else if (!strcmp(processStepName, "fifthStep")){
+	//	cnt = stamp_int++;
+	//}
+	
+	// 이름 중복 방지를 위한 시간 데이터로 변경 - yyyyMMdd_HHmmss
+	SYSTEMTIME stTime;
+	::GetLocalTime(&stTime);
+
+	char szString[30] = { 0, };
+	sprintf(szString, _T("%04d%02d%02d_%02d%02d%02d"),
+		stTime.wYear, stTime.wMonth, stTime.wDay,
+		stTime.wHour, stTime.wMinute, stTime.wSecond);
+
+	char tmpString[70] = "../";
+
+	strcat_s(tmpString, "Picture_Data");
+	if (_mkdir(tmpString) == 0){}
+	else{
+	}
+	strcat_s(tmpString, "/");
+
+	strcat_s(tmpString, processStepName);
+
+	if (_mkdir(tmpString) == 0){
+	}
+	else{
+	}
+	//std::cout << "Directory is created" << std::endl;
+	char picturePath[70] = "";
+	strcat_s(tmpString, "/");
+	strcat_s(picturePath, tmpString);
+	char pictureName[30] = "";
+	if (!isCompress)
+		sprintf(pictureName, "%s.png", szString);
+	else
+		sprintf(pictureName, "%s.jpg", szString);
+
 	strcat_s(picturePath, processStepName);
 	strcat_s(picturePath, pictureName);
 	cv::imwrite(picturePath, input);
